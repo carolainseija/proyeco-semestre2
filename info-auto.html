@@ -16,7 +16,6 @@
 
             <div class="col-md-4">
                 <img style="height: 80px; width: 200px;" src="/logo2.png" />
-                <!-- columna uno: logo -->
             </div>
             <div class="col-md-8 justify-content-center mt-3">
                 <div class="text-center">
@@ -48,11 +47,9 @@
                 </div>
                 <div class="col-md-6">
                     <ul id="lista" class="list-group list-group-flush">
-
                     </ul>
                 </div>
             </div>
-
             <div class="row mt-5">
                 <div class="container my-5">
                     <div class="card shadow-sm" style="background-color: aliceblue;">
@@ -63,9 +60,7 @@
                                 un motor eficiente, bajo kilometraje, y un interior cómodo y espacioso, este vehículo
                                 ofrece una experiencia de conducción suave. Ideal para quienes buscan confiabilidad sin
                                 sacrificar el confort."</p>
-
                             <div id="caracteristicas">
-
                             </div>
                         </div>
                     </div>
@@ -75,7 +70,6 @@
 
     </div>
     <div class="position-sticky" style="margin-left: 92%; margin-bottom: 2%;">
-        <!-- logo wpp -->
         <button style="background-color: transparent; border: none;" onclick="wpp()">
             <a id="wpp" target="_blank" class="whatsapp">
                 <img style="width: 70px; height: 70px;" src="/whatsapp.png" alt="logo wpp" />
@@ -92,14 +86,11 @@
 
 
         const id = window.location.pathname.split('/').pop();
-        console.log("iddd", id)
-
         const url = `http://localhost:3000/autos/${id}`;
 
         async function obtenerAuto() {
             const res = await fetch(url);
             const auto = await res.json();
-            console.log("auto", auto)
 
             let lista = document.getElementById('lista');
             lista.innerHTML = '';
@@ -123,30 +114,18 @@
 
         `;
 
-
-        let caracteristicas = document.getElementById('caracteristicas');
-
-        
-        auto.caracteristicas.forEach(caracteristica => {
-            const elementoCaracteristicas = `
+            let caracteristicas = document.getElementById('caracteristicas');
+            auto.caracteristicas.forEach(caracteristica => {
+                const elementoCaracteristicas = `
             <button style="background-color: white; border-radius: 5px;border: 4px solid rgba(13, 110, 253, .25);" class="btn">${caracteristica}</button>
-            `           
-            caracteristicas.innerHTML += elementoCaracteristicas;
-         });
-            
-            
+            `
+                caracteristicas.innerHTML += elementoCaracteristicas;
+            });
+
             lista.innerHTML += elemento;
-
         }
-
         obtenerAuto()
-
-
-
-
-
     </script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -154,4 +133,3 @@
 </body>
 
 </html>
-

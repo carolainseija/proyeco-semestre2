@@ -80,14 +80,12 @@ app.post('/autos', (req, res)=>{
 
 app.delete("/autos/:id", (req, res) => {
     const id = req.params.id;
-    console.log("ID", id)
     res.send(vehiculos.baja(id));
 })
 
 app.put('/autos/:id', (req, res) => {
     const id = req.params.id;
     const body = req.body;
-console.log("body", body)
     const autoModificado = vehiculos.modificacion(id, body);
 
     res.json({

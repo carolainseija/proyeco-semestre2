@@ -81,8 +81,6 @@
                         <input type="text" class="form-control" id="motor" placeholder="Motor" value="1.2">
                     </div>
                 </div>
-
-
             </div>
             <div class="row mt-3">
                 <div class="col-md-4">
@@ -169,7 +167,6 @@
     </div>
     <div class="container mt-3">
         <ol class="list-group list-group-numbered" id="lista-vehiculos">
-
         </ol>
     </div>
     <!-- modal -->
@@ -177,17 +174,12 @@
         <div class="modal fade" id="dialogo1">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <!-- cabecera del diálogo -->
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Modificar auto</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    <!-- cuerpo del diálogo -->
                     <div class="modal-body" id="modal-body">
-
-                        <!-- form -->
                     </div>
-                    <!-- pie del diálogo -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
@@ -196,9 +188,7 @@
         </div>
     </div>
     <script>
-        const url = 'http://localhost:3000/autos'; //http://localhost:3000/URL DEL INDEX.JS
-
-        //LISTAR
+        const url = 'http://localhost:3000/autos';
 
         async function listarAutos() {
             const res = await fetch(url);
@@ -218,19 +208,13 @@
               </span>
         </li>
         `
-
-
                 lista.innerHTML += elemento;
             })
         }
 
         let caracteristicas = [];
 
-        //todos losdatos sacados del formulario
         async function alta() {
-
-
-            // caracteristicas
             const Aire = document.getElementById("Aire-acondicionado");
             const TransmisiónAut = document.getElementById("Transmisión-Automatica");
             const TransmisiónMan = document.getElementById("Transmisión-Manual");
@@ -247,7 +231,6 @@
             AgregarCaracteristicas(Airbag)
             AgregarCaracteristicas(Frenos)
             AgregarCaracteristicas(Radio)
-            console.log("array", caracteristicas)
             const año = document.getElementById('año').value;
             const modelo = document.getElementById('modelo').value;
             const marca = document.getElementById('marca').value;
@@ -274,7 +257,6 @@
                 motor: motor,
                 caracteristicas,
             }
-            //alta: todos los datos del auto
             const res = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -287,21 +269,12 @@
             listarAutos()
         }
 
-
-
         function AgregarCaracteristicas(caracteristica) {
-
             if (caracteristica.checked) {
                 caracteristicas.push(caracteristica.id)
-                console.log("El checkbox de Transmisión Automática está marcado.");
-            } else {
-                console.log("El checkbox de Transmisión Automática no está marcado.");
             }
         }
 
-        console.log("Características seleccionadas:", caracteristicas);
-
-        //eliminar
         async function Eliminar(id) {
             const res = await fetch(`${url}/${id}`, {
                 method: 'DELETE'
@@ -309,15 +282,9 @@
             listarAutos();
         }
 
-        //editar
         async function Modificar(id) {
-
-
-            //fetch get=> autos/:id
             const res = await fetch(`${url}/${id}`);
             const auto = await res.json();
-
-            //recorremos
             const elemento = `
                   <div class="container">
                             <div class="row">
@@ -437,24 +404,17 @@
                     combustible,
                     habilitado,
                     kilometros,
-                    //  caracteristicas: ["aire", "airbag"]
                 })
             });
-            //cerrar: <button id="cerrar" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             const btnCerrar = document.getElementById("cerrar")
-            // btnCerrar.append = data-bs-dismiss="modal"
-            // 
             listarAutos()
         }
-
-
         listarAutos()
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>
