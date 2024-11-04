@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index</h1>
+    <h2>Productos</h2>
+    <div>
+        <input type="text" name="txtNombre" id="txtNombre" placeholder="txtNombre del producto">
+        <input type="number" name="txtPrecio" id="txtPrecio" placeholder="Precio del producto">
+        <button type="button" onclick="alta()">Agregar</button>
+    </div>
+
+    <div>
+        <h2>Lista de productos</h2>
+        <ul id="lista-productos"></ul>
+    </div>
+    <script>
+        const url = 'http://localhost:3000/productos';
+
+        async function obtenerProductos(){
+            const res = await fetch(url);
+            const productos = await res.json();
+
+            const lista = document.getElementById ('lista-productos');
+            lista.innerHTML = '';
+
+            productos.forEach(producto =>{
+                //`<li> 
+                //     ${producto.name} ${producto.price}
+                //     <button type="button" onclick="baja(${producto.id})">Eliminar</button>
+                //     <button type="button" onclick="editar(${producto.id})">Modificar</button>
+                    // </li>`;
+             const elemento = `<li>${producto.name} ${producto.price}
+             <button type="button" onclick="baja(${producto.id})">Eliminar</button> 
+             <a href="http://localhost:3000/productos/ver-producto/${producto.id}">ver</a></li>`
+             
+             
+                    lista.innerHTML +=elemento;
+            })
+        }
+        async function alta() {
+            const nombre = document.getElementById('txtNombre').value;
+            const precio = document.getElementById('txtPrecio').value;
+
+            const res = await fetch(url, {
+                method: 'Post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: nombre,
+                    price: precio
+                })
+            })
+            obtenerProductos();
+            }
+
+            async function baja(id){
+                const res = await fetch(`${url}/${id}`, {
+                    method: 'DELETE'
+                });
+                obtenerProductos();
+            }
+        
+            async function editar(id){
+                const nuevonombre = prompt('Cual es el nombre?');
+                const nuevoprecio = prompt ('Cual es el precio?');
+                const res = await fetch (`${url}/${id}`,{
+                    method:'PUT',
+                    headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: nuevonombre,
+                    price: nuevoprecio
+                    })
+                });
+                obtenerProductos();
+            }
+        obtenerProductos();
+    </script>
+</body>
+</html>

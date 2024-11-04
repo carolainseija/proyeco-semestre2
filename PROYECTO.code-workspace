@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../PROYECTO"
+		},
+		{
+			"path": "../../BACKEND"
+		},
+		{
+			"path": "../../FRONTEND"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "proyecto semestre dos"
+	}
+}
