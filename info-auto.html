@@ -84,10 +84,8 @@
             window.location.href = linkWpp;
         }
 
-
         const id = window.location.pathname.split('/').pop();
         const url = `http://localhost:3000/autos/${id}`;
-
         async function obtenerAuto() {
             const res = await fetch(url);
             const auto = await res.json();

@@ -44,7 +44,6 @@ class Vehiculos {
         vehiculosModificar.motor = datosModificar.motor;
 
         this.guardar();
-
         return this.vehiculos[index];
 
     }
@@ -54,13 +53,10 @@ class Vehiculos {
     }
     //retornar el elemento que concuerde con el id en parametro
     buscar(id) {
-
         const autoBuscado = this.vehiculos.find((auto) => {
             return auto.id == id
         });
-
         return autoBuscado;
-
     }
     //eliminar el elemento que concuerde con el id y retornar un string de mensaje
     //preguntar al profe???? si se debe eliminar 

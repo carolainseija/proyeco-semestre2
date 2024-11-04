@@ -5,10 +5,9 @@ const Vehiculos = require('./claseVehiculos');
 const app = express ();
 app.use(express.static('assets'));
 const port = 3000;
-app.use(express.json()); // Para recibir json por metodo POST
+app.use(express.json());
 
-const vehiculos = new Vehiculos();// Creando una instancia de la clase Productos. Clase Productos esta definida en./
-
+const vehiculos = new Vehiculos();
 
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, 'home.html'));
@@ -18,9 +17,6 @@ app.get('/administrador', (req,res) => {
     res.sendFile(path.join(__dirname, 'administrador.html'));
 })
 
-// app.get('/funciones', (req,res) => {
-//     res.sendFile(path.join(__dirname, 'funciones.js'));
-// })
 
 app.get('/claseVehiculo', (req,res) => {
     res.sendFile(path.join(__dirname, 'claseVehiculo.js'));
