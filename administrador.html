@@ -101,10 +101,8 @@
                         value="0">
                 </div>
                 <div class="col-md-4">
-                    <div class="col-md-4">
                         <label for="motor" class="form-label">Motor:</label>
                         <input type="text" class="form-control" id="motor" placeholder="Motor" value="1.2">
-                    </div>
                 </div>
             </div>
             <div class="row mt-3">
@@ -333,39 +331,39 @@
             const elemento = `
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="añoNuevo" class="form-label">Año:</label>
                         <input class="form-control" id="añoNuevo" placeholder="Año" value="${auto.año}">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="modeloNuevo" class="form-label">Modelo:</label>
                         <input type="text" class="form-control" id="modeloNuevo" name="modelo" placeholder="Modelo" value="${auto.modelo}">
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="marcaNueva" class="form-label">Marca:</label>
                         <input type="text" class="form-control" id="marcaNueva" name="marca" placeholder="Marca" value="${auto.marca}">
                     </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="cantPuertasNuevas" class="form-label">Cantidad de puertas:</label>
                     <input type="number" class="form-control" id="cantPuertasNuevas" name="cantPuertas" placeholder="Cantidad de puertas" value="${auto.cantPuertas}">
                 </div>
             </div>
         <div class="row mt-3">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <label for="precioNuevo" class="form-label">Precio:</label>
                 <input type="number" class="form-control" id="precioNuevo" name="precio" placeholder="Precio"
                 value="${auto.precio}">
             </div>
-             <div class="col-md-4">
+             <div class="col-md-6">
                 <label for="colorNuevo" class="form-label">Color:</label>
                 <input type="text" class="form-control" id="colorNuevo" name="color" placeholder="Color"
                 value="${auto.color}">
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <label for="tipoNuevo" class="form-label">Tipo de vehículo:</label>
                 <select class="form-select" id="tipoNuevo" name="tipo" value="${auto.tipo}">
                     <option ${auto.tipo == "Hatchback" && "selected"} value="Hatchback">Hatchback</option>
@@ -378,7 +376,7 @@
                     <option ${auto.tipo == "Station Wagon" && "selected"} value="Station Wagon">Station Wagon</option>
                 </select>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <label for="combustibleNuevo" class="form-label">Tipo de combustible:</label>
                 <select class="form-select" id="combustibleNuevo" name="combustible" value="${auto.combustible}">
                     <option ${auto.combustible == "Eléctrico" && "selected"} value="Eléctrico">Eléctrico</option>
@@ -389,12 +387,12 @@
             </div>
         </div>
     <div class="row mt-3">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <label for="kilometrosNuevos" class="form-label">kilometros:</label>
             <input type="text" class="form-control" id="kilometrosNuevos" name="kilometros" placeholder="Kilometros"
                 value="${auto.kilometros}">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <label for="habilitadoNuevo" class="form-label">Estado</label>
             <select class="form-select" id="habilitadoNuevo" name="habilitado" value="${auto.habilitado}">
                 <option ${auto.habilitado == "reservado" && "selected"} value="reservado">Reservado</option>
@@ -402,11 +400,11 @@
             </select>
         </div>
         <div class="row mt-3">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <label for="motorNuevo" class="form-label">Motor:</label>
                 <input type="text" class="form-control" id="motorNuevo" placeholder="Motor" value="${auto.motor}">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="descripciónNueva">Descripción</label>
                     <textarea class="form-control" id="descripciónNueva" rows="3">${auto.descripción}</textarea>
