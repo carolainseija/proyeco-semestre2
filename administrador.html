@@ -10,9 +10,34 @@
 </head>
 
 <body>
-    <div class="container">
-        <h2>Formulario de ventas - Administrador</h2>
-        <div>
+    <div style="background-color: #d2d1d1; height: 80px; max-width: none;" class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img style="height: 80px; width: 200px;" src="/logo2.png" />
+            </div>
+            <div class="col-md-8 justify-content-center mt-3">
+                <div class="text-center">
+                    <ul class="nav nav-tabs" style="border-bottom: none;">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">Vehículos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">Promociones</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h2>Formulario Administrador</h2>
+        <div class="row justify-content-center align-items-center">
             <div class="row">
                 <div class="col-md-4">
                     <label for="año" class="form-label">Año:</label>
@@ -91,81 +116,97 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Aire-acondicionado">
-                        <label class="form-check-label" for="Aire-acondicionado">
-                            Aire-acondicionado
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Airbag">
-                        <label class="form-check-label" for="Airbag">
-                            Airbag
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Frenos-ABS">
-                        <label class="form-check-label" for="Frenos-ABS">
-                            Frenos ABS
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Cristales-eléctricos">
-                        <label class="form-check-label" for="Cristales-eléctricos">
-                            Cristales-eléctricos
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Alarma">
-                        <label class="form-check-label" for="Alarma">
-                            Alarma
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Transmisión-Automatica">
-                        <label class="form-check-label" for="Transmisión-Automatica">
-                            Transmisión-Automatica
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Transmisión-Manual">
-                        <label class="form-check-label" for="Transmisión-Manual">
-                            Transmisión-Manual
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Radio-pantalla">
-                        <label class="form-check-label" for="Radio-pantalla">
-                            Radio-Pantalla
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Llantas">
-                        <label class="form-check-label" for="Llantas">
-                            Llantas
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Velocidad-Crucero">
-                        <label class="form-check-label" for="Velocidad-Crucero">
-                            Velocidad-Crucero
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Piloto-automático">
-                        <label class="form-check-label" for="Piloto-automático">
-                            Piloto-automático
-                        </label>
+                    <div class="form-group">
+                        <label for="descripción">Descripción</label>
+                        <textarea class="form-control" id="descripción"
+                            rows="3">Este sedán combina estilo y rendimiento en un diseño moderno y elegante. Equipado con un motor eficiente, bajo kilometraje, y un interior cómodo y espacioso, este vehículo ofrece una experiencia de conducción suave. Ideal para quienes buscan confiabilidad sin sacrificar el confort.</textarea>
                     </div>
                 </div>
-            </div>
-            <div class="mt-3">
-                <button onclick="alta()" type="button" class="btn btn-primary">Guardar</button>
+                <div class="row mt-3">
+                    <h5>Otras Caracteristicas:</h5>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Aire-acondicionado">
+                            <label class="form-check-label" for="Aire-acondicionado">
+                                Aire-acondicionado
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Airbag">
+                            <label class="form-check-label" for="Airbag">
+                                Airbag
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Frenos-ABS">
+                            <label class="form-check-label" for="Frenos-ABS">
+                                Frenos ABS
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Cristales-eléctricos">
+                            <label class="form-check-label" for="Cristales-eléctricos">
+                                Cristales-eléctricos
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Alarma">
+                            <label class="form-check-label" for="Alarma">
+                                Alarma
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Transmisión-Automatica">
+                            <label class="form-check-label" for="Transmisión-Automatica">
+                                Transmisión-Automatica
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Transmisión-Manual">
+                            <label class="form-check-label" for="Transmisión-Manual">
+                                Transmisión-Manual
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Radio-pantalla">
+                            <label class="form-check-label" for="Radio-pantalla">
+                                Radio-Pantalla
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Llantas">
+                            <label class="form-check-label" for="Llantas">
+                                Llantas
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Velocidad-Crucero">
+                            <label class="form-check-label" for="Velocidad-Crucero">
+                                Velocidad-Crucero
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Piloto-automático">
+                            <label class="form-check-label" for="Piloto-automático">
+                                Piloto-automático
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <button onclick="alta()" type="button" class="btn btn-primary">Guardar</button>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    <div class="container mt-3">
+    <div class="container mt-5 mb-5">
+        <h3>Lista de los vehículos</h3>
         <ol class="list-group list-group-numbered" id="lista-vehiculos">
         </ol>
     </div>
@@ -197,17 +238,18 @@
             lista.innerHTML = '';
             autos.forEach((auto) => {
                 const elemento = `
-          <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div class="ms-2 me-auto">
-            <div class="fw-bold">${auto.marca} ${auto.modelo}, año: ${auto.año}</div>
-          ${auto.kilometros}KM, cantidad de puertas: ${auto.cantPuertas}, ${auto.color}, ${auto.combustible}, ${auto.tipo}, ${auto.precio}, ${auto.habilitado == "reservado" ? "reservado" : "No Reservado"}
-          </div>
-          <span class="badge rounded-pill">
-              <button type="button" class="btn btn-danger"  onclick="Eliminar(${auto.id})" >Eliminar</button>
-              <button type="button" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#dialogo1"  onclick="Modificar(${auto.id})">Editar</button>
-              </span>
-        </li>
-        `
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">${auto.marca} ${auto.modelo}, año: ${auto.año}</div>
+                        ${auto.kilometros}KM, cantidad de puertas: ${auto.cantPuertas}, ${auto.color}, ${auto.combustible},
+                        ${auto.tipo}, ${auto.precio}, ${auto.habilitado == "reservado" ? "reservado" : "No Reservado"}
+                    </div>
+                    <span class="badge rounded-pill">
+                    <button type="button" class="btn btn-danger" onclick="Eliminar(${auto.id})">Eliminar</button>
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#dialogo1"
+                          onclick="Modificar(${auto.id})">Editar</button>
+                    </span>
+                </li>`
                 lista.innerHTML += elemento;
             })
         }
@@ -242,6 +284,8 @@
             const habilitado = document.getElementById('habilitado').value;
             const kilometros = document.getElementById('kilometros').value;
             const motor = document.getElementById('motor').value;
+            const descripción = document.getElementById('descripción').value;
+
 
             const autoGuardar = {
                 año: año,
@@ -256,6 +300,7 @@
                 kilometros: kilometros,
                 motor: motor,
                 caracteristicas,
+                descripción
             }
             const res = await fetch(url, {
                 method: 'POST',
@@ -286,90 +331,93 @@
             const res = await fetch(`${url}/${id}`);
             const auto = await res.json();
             const elemento = `
-                  <div class="container">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label for="añoNuevo" class="form-label">Año:</label>
-                                    <input class="form-control" id="añoNuevo" placeholder="Año" value="${auto.año}">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="modeloNuevo" class="form-label">Modelo:</label>
-                                    <input type="text" class="form-control" id="modeloNuevo" name="modelo"
-                                        placeholder="Modelo" value="${auto.modelo}">
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-4">
-                                    <label for="marcaNueva" class="form-label">Marca:</label>
-                                    <input type="text" class="form-control" id="marcaNueva" name="marca" placeholder="Marca"
-                                        value="${auto.marca}">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="cantPuertasNuevas" class="form-label">Cantidad de puertas:</label>
-                                    <input type="number" class="form-control" id="cantPuertasNuevas" name="cantPuertas"
-                                        placeholder="Cantidad de puertas" value="${auto.cantPuertas}">
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-4">
-                                    <label for="precioNuevo" class="form-label">Precio:</label>
-                                    <input type="number" class="form-control" id="precioNuevo" name="precio"
-                                        placeholder="Precio" value="${auto.precio}">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="colorNuevo" class="form-label">Color:</label>
-                                    <input type="text" class="form-control" id="colorNuevo" name="color" placeholder="Color"
-                                        value="${auto.color}">
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-4">
-                                    <label for="tipoNuevo" class="form-label">Tipo de vehículo:</label>
-                                    <select class="form-select" id="tipoNuevo" name="tipo" value="${auto.tipo}">
-                                        <option ${auto.tipo == "Hatchback" && "selected"}  value="Hatchback">Hatchback</option>
-                                        <option ${auto.tipo == "Sedán" && "selected"}  value="Sedán">Sedán</option>
-                                        <option ${auto.tipo == "SUV" && "selected"}  value="SUV">SUV</option>
-                                        <option ${auto.tipo == "Crossover" && "selected"}  value="Crossover">Crossover</option>
-                                        <option ${auto.tipo == "Coupe" && "selected"}  value="Coupe">Coupe</option>
-                                        <option ${auto.tipo == "Convertible" && "selected"}  value="Convertible">Convertible</option>
-                                        <option ${auto.tipo == "Pickup Truck" && "selected"}  value="Pickup Truck">Pickup Truck</option>
-                                        <option ${auto.tipo == "Station Wagon" && "selected"}  value="Station Wagon">Station Wagon</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="combustibleNuevo" class="form-label">Tipo de combustible:</label>
-                                    <select class="form-select" id="combustibleNuevo" name="combustible" value="${auto.combustible}">
-                                        <option ${auto.combustible == "Eléctrico" && "selected"} value="Eléctrico">Eléctrico</option>
-                                        <option ${auto.combustible == "Nafta" && "selected"} value="Nafta">Nafta</option>
-                                        <option ${auto.combustible == "Gasoil" && "selected"} value="Gasoil">Gasoil</option>
-                                        <option ${auto.combustible == "Híbrido" && "selected"} value="Híbrido">Híbrido</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-4">
-                                    <label for="kilometrosNuevos" class="form-label">kilometros:</label>
-                                    <input type="text" class="form-control" id="kilometrosNuevos" name="kilometros"
-                                        placeholder="Kilometros" value="${auto.kilometros}">
-                                </div>
-                                <div class="col-md-4">
-                                      <label for="habilitadoNuevo" class="form-label">Estado</label>
-                    <select class="form-select" id="habilitadoNuevo" name="habilitado" value="${auto.habilitado}">
-                        <option ${auto.habilitado == "reservado" && "selected"} value="reservado">Reservado</option>
-                        <option ${auto.habilitado == "no-reservado" && "selected"} value="no-reservado">No Reservado</option>
-                    </select>
-                                </div>
-                                  <div class="col-md-4">
+            <div class="container">
+                <div class="row">
                     <div class="col-md-4">
-                        <label for="motor" class="form-label">Motor:</label>
-                        <input type="text" class="form-control" id="motor" placeholder="Motor" value"${auto.motor}">
+                        <label for="añoNuevo" class="form-label">Año:</label>
+                        <input class="form-control" id="añoNuevo" placeholder="Año" value="${auto.año}">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="modeloNuevo" class="form-label">Modelo:</label>
+                        <input type="text" class="form-control" id="modeloNuevo" name="modelo" placeholder="Modelo" value="${auto.modelo}">
                     </div>
                 </div>
-                            </div>
-                            <div class="mt-3">
-                                <button onclick="Actualizar(${id})" type="button" class="btn btn-primary">Actualizar</button>
-                            </div>
-                        </div>`
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <label for="marcaNueva" class="form-label">Marca:</label>
+                        <input type="text" class="form-control" id="marcaNueva" name="marca" placeholder="Marca" value="${auto.marca}">
+                    </div>
+                <div class="col-md-4">
+                    <label for="cantPuertasNuevas" class="form-label">Cantidad de puertas:</label>
+                    <input type="number" class="form-control" id="cantPuertasNuevas" name="cantPuertas" placeholder="Cantidad de puertas" value="${auto.cantPuertas}">
+                </div>
+            </div>
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <label for="precioNuevo" class="form-label">Precio:</label>
+                <input type="number" class="form-control" id="precioNuevo" name="precio" placeholder="Precio"
+                value="${auto.precio}">
+            </div>
+             <div class="col-md-4">
+                <label for="colorNuevo" class="form-label">Color:</label>
+                <input type="text" class="form-control" id="colorNuevo" name="color" placeholder="Color"
+                value="${auto.color}">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <label for="tipoNuevo" class="form-label">Tipo de vehículo:</label>
+                <select class="form-select" id="tipoNuevo" name="tipo" value="${auto.tipo}">
+                    <option ${auto.tipo == "Hatchback" && "selected"} value="Hatchback">Hatchback</option>
+                    <option ${auto.tipo == "Sedán" && "selected"} value="Sedán">Sedán</option>
+                    <option ${auto.tipo == "SUV" && "selected"} value="SUV">SUV</option>
+                    <option ${auto.tipo == "Crossover" && "selected"} value="Crossover">Crossover</option>
+                    <option ${auto.tipo == "Coupe" && "selected"} value="Coupe">Coupe</option>
+                    <option ${auto.tipo == "Convertible" && "selected"} value="Convertible">Convertible</option>
+                    <option ${auto.tipo == "Pickup Truck" && "selected"} value="Pickup Truck">Pickup Truck</option>
+                    <option ${auto.tipo == "Station Wagon" && "selected"} value="Station Wagon">Station Wagon</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="combustibleNuevo" class="form-label">Tipo de combustible:</label>
+                <select class="form-select" id="combustibleNuevo" name="combustible" value="${auto.combustible}">
+                    <option ${auto.combustible == "Eléctrico" && "selected"} value="Eléctrico">Eléctrico</option>
+                    <option ${auto.combustible == "Nafta" && "selected"} value="Nafta">Nafta</option>
+                    <option ${auto.combustible == "Gasoil" && "selected"} value="Gasoil">Gasoil</option>
+                    <option ${auto.combustible == "Híbrido" && "selected"} value="Híbrido">Híbrido</option>
+                </select>
+            </div>
+        </div>
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <label for="kilometrosNuevos" class="form-label">kilometros:</label>
+            <input type="text" class="form-control" id="kilometrosNuevos" name="kilometros" placeholder="Kilometros"
+                value="${auto.kilometros}">
+        </div>
+        <div class="col-md-4">
+            <label for="habilitadoNuevo" class="form-label">Estado</label>
+            <select class="form-select" id="habilitadoNuevo" name="habilitado" value="${auto.habilitado}">
+                <option ${auto.habilitado == "reservado" && "selected"} value="reservado">Reservado</option>
+                <option ${auto.habilitado == "no-reservado" && "selected"} value="no-reservado">No Reservado</option>
+            </select>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <label for="motorNuevo" class="form-label">Motor:</label>
+                <input type="text" class="form-control" id="motorNuevo" placeholder="Motor" value="${auto.motor}">
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="descripciónNueva">Descripción</label>
+                    <textarea class="form-control" id="descripciónNueva" rows="3">${auto.descripción}</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-3">
+        <button onclick="Actualizar(${id})" type="button" class="btn btn-primary">Actualizar</button>
+    </div>
+</div>`
 
             const modalBody = document.getElementById("modal-body")
             modalBody.innerHTML = elemento;
@@ -386,8 +434,8 @@
             const combustible = document.getElementById('combustibleNuevo').value;
             const habilitado = document.getElementById('habilitadoNuevo').value;
             const kilometros = document.getElementById('kilometrosNuevos').value;
-
-
+            const motor = document.getElementById('motorNuevo').value;
+            const descripción = document.getElementById('descripciónNueva').value;
             const respuesta = await fetch(`${url}/${id}`, {
                 method: 'PUT',
                 headers: {
@@ -404,6 +452,8 @@
                     combustible,
                     habilitado,
                     kilometros,
+                    motor,
+                    descripción,
                 })
             });
             const btnCerrar = document.getElementById("cerrar")

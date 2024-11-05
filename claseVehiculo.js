@@ -12,7 +12,8 @@ class Vehiculo {
     #kilometros
     #motor
     #caracteristicas
-    constructor(id,año,modelo,marca,cantPuertas,precio,color,tipo,combustible,habilitado,kilometros, motor,  caracteristicas ) {
+    #descripción
+    constructor(id,año,modelo,marca,cantPuertas,precio,color,tipo,combustible,habilitado,kilometros, motor,  caracteristicas, descripción ) {
         this.#id = id;
         this.#año = año;
         this.#modelo = modelo;
@@ -26,6 +27,7 @@ class Vehiculo {
         this.#kilometros = kilometros;
         this.#motor = motor;
         this.#caracteristicas = caracteristicas;
+        this.#descripción = descripción;
     }
     get Id(){
         return this.#id;
@@ -66,6 +68,9 @@ class Vehiculo {
      get Caracteristicas(){
         return this.#caracteristicas;
      }
+     get Descripción(){
+        return this.#descripción;
+     }
     
  
     set Año(NuevoAño){
@@ -103,6 +108,9 @@ class Vehiculo {
      }
      set Caracteristicas(cantKms){
         this.#kilometros = cantKms;
+     }
+     set Descripción(descripciónNueva){
+        this.#descripción = descripciónNueva;
      }
 }
 

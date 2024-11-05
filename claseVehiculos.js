@@ -1,6 +1,7 @@
 class Vehiculos {
     constructor() {
         this.vehiculos = [];
+        this.cargar()
     }
     alta(NuevoVehiculo) {
         if (this.vehiculos.length != 0) { // Se ejecuta cuando el array NO es vacío
@@ -42,6 +43,8 @@ class Vehiculos {
         vehiculosModificar.habilitado = datosModificar.habilitado;
         vehiculosModificar.kilometros = datosModificar.kilometros;
         vehiculosModificar.motor = datosModificar.motor;
+        vehiculosModificar.descripción = datosModificar.descripción;
+
 
         this.guardar();
         return this.vehiculos[index];
