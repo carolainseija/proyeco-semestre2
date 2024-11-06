@@ -6,29 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-        <title>HOME</title>
+    <title>HOME</title>
 </head>
 
 <body>
     <div class="container" style="max-width: none;">
-        <div style="background-color: #d2d1d1; height: 80px;" class="row">
-            <div class="col-md-4">
+        <div style="background-color: #d2d1d1; height: 80px; padding-left: 5%;" class="row">
+            <div class="col-md-8">
                 <img style="height: 80px; width: 200px;" src="/logo2.png" />
             </div>
-            <div class="col-md-8 justify-content-center mt-3">
+            <div class="col-md-4 justify-content-center mt-3">
                 <div class="text-center">
                     <ul class="nav nav-tabs" style="border-bottom: none;">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">Inicio</a>
+                            <a class="nav-link text-dark" href="/">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">Sobre Nosotros</a>
+                            <a class="nav-link text-dark" href="/sobre-nosotros">Sobre Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">Vehículos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">Promociones</a>
+                            <a class="nav-link text-dark" href="/administrador">Administrador</a>
                         </li>
                     </ul>
                 </div>
@@ -38,6 +35,30 @@
             <div id="cards-autos" class="row">
             </div>
         </div>
+    </div>
+    <div>
+
+    </div>
+    <div class="container mt-5">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-3 mb-0 text-body-secondary">© 2024 SSLC. Todos los derechos reservados.</p>
+
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img class="bi me-2" width="200" height="auto" src="/logo2.png" alt="logo" />
+            </a>
+
+            <ul class="nav col-md-5 justify-content-end">
+                <li class="nav-item nav-link px-2 text-body-secondary">Stella González</li>
+                <li class="nav-item nav-link px-2 text-body-secondary">Sofia Moreira</li>
+                <li class="nav-item nav-link px-2 text-body-secondary">Lucas Rodríguez</li>
+                <li class="nav-item nav-link px-2 text-body-secondary">Carolain Seija</li>
+
+                <li class="nav-item nav-link px-2 text-body-secondary">Carlos Romero</li>
+                <!-- <li style="background-image: url(assets/); background-repeat: no-repeat; background-size: contain; height: 50vh;"  class="nav-item nav-link px-2 text-body-secondary">Gabriel Barboza</li> -->
+            </ul>
+
+        </footer>
     </div>
     <script>
         const url = 'http://localhost:3000/autos';
@@ -49,11 +70,15 @@
             card.innerHTML = '';
 
             autos.forEach(auto => {
-                const elemento = `
+                let elemento = ""
+                const imagenUrl = auto.id > 6 ? `/autos/1.jpeg` : `/auto${auto.id}/1.jpeg`;
+                if (auto.habilitado == "no-reservado") {
+                    elemento = `
                   <div class="col-md-4 mt-4">
                     <a href="http://localhost:3000/info-auto/${auto.id}">
-                        <div class="card" style="width: auto">
-                            <img src="/peugeot208.jpg" class="card-img-top" alt="...">
+                        <div class="card" style="width: auto" style="height: 40%;">
+                            <div style="background-image: url(${imagenUrl}); background-repeat: no-repeat; background-size: cover; height: 40vh;" >
+                           </div>
                             <div class="card-body text-center">
                                 <h5 class="card-title">${auto.marca} ${auto.modelo}</h5>
                                 <p class="card-text">
@@ -65,13 +90,36 @@
                                 </p>
                                 <button type="button" style="width: 100%;"
                                     class="btn btn-secondary btn-lg btn-block">USD ${auto.precio}</button>
-                           
                                     </div>
                         </div>
                     </a>
                 </div>
                 `;
-
+                } else {
+                    elemento = `
+                   <div class="col-md-4 mt-4" style="position: relative;">
+            <a href="#">
+                <div class="card" style="width: auto">
+                     <div style="background-image: url(${imagenUrl}); background-repeat: no-repeat; background-size: cover; height: 40vh;" >
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">${auto.marca} ${auto.modelo}</h5>
+                        <p class="card-text">
+                        <ul class="list-group list-group-horizontal justify-content-center">
+                            <li class="list-group-item">${auto.año}</li>
+                            <li class="list-group-item">${auto.combustible}</li>
+                            <li class="list-group-item">${auto.kilometros} KM</li>
+                        </ul>
+                        </p>
+                        <button type="button" style="width: 100%;"
+                            class="btn btn-secondary btn-lg btn-block">USD ${auto.precio}</button>
+                            </div>
+                </div>
+            </a>
+            <img style="position: absolute; top: 0px; right: 12px;" src="/reservado.png" />
+        </div>
+                `;
+                }
                 card.innerHTML += elemento;
             });
         }

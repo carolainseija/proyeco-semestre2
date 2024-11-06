@@ -17,6 +17,10 @@ app.get('/administrador', (req,res) => {
     res.sendFile(path.join(__dirname, 'administrador.html'));
 })
 
+app.get('/sobre-nosotros', (req,res) => {
+    res.sendFile(path.join(__dirname, 'sobre-nosotros.html'));
+})
+
 
 app.get('/claseVehiculo', (req,res) => {
     res.sendFile(path.join(__dirname, 'claseVehiculo.js'));

@@ -10,28 +10,29 @@
 </head>
 
 <body>
-    <div style="background-color: #d2d1d1; height: 80px; max-width: none;" class="container">
-        <div class="row">
-            <div class="col-md-4">
+    <div class="container" style="max-width: none;">
+        <div style="background-color: #d2d1d1; height: 80px; padding-left: 5%;" class="row">
+            <div class="col-md-8">
                 <img style="height: 80px; width: 200px;" src="/logo2.png" />
             </div>
-            <div class="col-md-8 justify-content-center mt-3">
+            <div class="col-md-4 justify-content-center mt-3">
                 <div class="text-center">
                     <ul class="nav nav-tabs" style="border-bottom: none;">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">Inicio</a>
+                            <a class="nav-link text-dark" href="/">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">Sobre Nosotros</a>
+                            <a class="nav-link text-dark" href="sobre-nosotros">Sobre Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">Vehículos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">Promociones</a>
+                            <a class="nav-link text-dark" href="/administrador">Administrador</a>
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <div id="cards-autos" class="row">
             </div>
         </div>
     </div>
@@ -101,8 +102,8 @@
                         value="0">
                 </div>
                 <div class="col-md-4">
-                        <label for="motor" class="form-label">Motor:</label>
-                        <input type="text" class="form-control" id="motor" placeholder="Motor" value="1.2">
+                    <label for="motor" class="form-label">Motor:</label>
+                    <input type="text" class="form-control" id="motor" placeholder="Motor" value="1.2">
                 </div>
             </div>
             <div class="row mt-3">
@@ -207,6 +208,26 @@
         <h3>Lista de los vehículos</h3>
         <ol class="list-group list-group-numbered" id="lista-vehiculos">
         </ol>
+    </div>
+    <div class="container mt-5">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-3 mb-0 text-body-secondary">© 2024 SSLC. Todos los derechos reservados.</p>
+
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img class="bi me-2" width="200" height="auto" src="/logo2.png" alt="logo" />
+            </a>
+
+            <ul class="nav col-md-5 justify-content-end">
+                <li class="nav-item nav-link px-2 text-body-secondary">Stella González</li>
+                <li class="nav-item nav-link px-2 text-body-secondary">Sofia Moreira</li>
+                <li class="nav-item nav-link px-2 text-body-secondary">Lucas Rodríguez</li>
+                <li class="nav-item nav-link px-2 text-body-secondary">Carolain Seija</li>
+
+                <li class="nav-item nav-link px-2 text-body-secondary">Carlos Romero</li>
+                <li class="nav-item nav-link px-2 text-body-secondary">Gabriel Barboza</li>
+            </ul>
+        </footer>
     </div>
     <!-- modal para editar -->
     <div class="container">
