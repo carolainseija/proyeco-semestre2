@@ -26,6 +26,7 @@ class Vehiculos {
             }
         }
     }
+
     modificacion(id, datosModificar) {
         const index = this.vehiculos.findIndex((vehiculo) => {
             return vehiculo.id == id

@@ -94,6 +94,20 @@ app.put('/autos/:id', (req, res) => {
     });
 });
 
+app.put('/autos/reservar/:id', (req, res) => {
+    const id = req.params.id;
+    const body = req.body;
+    const autoReservado = vehiculos.venta(id, body);
+
+    res.json({
+        mensaje: `Auto ${id} reservado correctamente`,
+        datos: autoReservado
+    });
+});
+
+
+
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`);
 })

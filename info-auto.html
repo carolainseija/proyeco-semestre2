@@ -97,6 +97,25 @@
 
         const id = window.location.pathname.split('/').pop();
         const url = `http://localhost:3000/autos/${id}`;
+
+
+        async function Reservar(id) {
+         
+         const respuesta = await fetch(`http://localhost:3000/autos/reservar/${id}`, {
+             method: 'PUT',
+             headers: {
+                 'Content-Type': 'application/json'
+             },
+             body: JSON.stringify({
+                 dato: "reservado"
+             })
+         });
+         obtenerAuto()      
+     }
+   
+   
+
+
         async function obtenerAuto() {
             const res = await fetch(url);
             const auto = await res.json();
@@ -159,7 +178,14 @@
                         <li class="list-group-item">Motor: ${auto.motor}</li>
                         <button type="button" style="width: 100%;" class="btn btn-secondary btn-lg btn-block">USD
                         ${auto.precio}
-                        </button>`;
+                        </button>
+                        <div style="display: flex; justify-content: center; margin: 10px;">
+                        <button onclick="Reservar(${auto.id})" style="width: 150px;" type="button" class="btn btn-dark rounded-5 text-light">RESERVAR</button>
+</div>
+                        
+                        `
+
+                ;
 
             let caracteristicas = document.getElementById('caracteristicas');
             auto.caracteristicas.forEach(caracteristica => {
@@ -171,6 +197,11 @@
 
             lista.innerHTML += elemento;
         }
+
+
+     
+
+
         obtenerAuto()
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
