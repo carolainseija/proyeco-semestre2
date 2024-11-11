@@ -9,6 +9,8 @@ app.use(express.json());
 
 const vehiculos = new Vehiculos();
 
+
+
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, 'home.html'));
 })
@@ -105,6 +107,19 @@ app.put('/autos/reservar/:id', (req, res) => {
     });
 });
 
+
+// app.get("", (req, res) => {
+//     res.sendFile(path.join(__dirname, '404.html'));
+
+// })
+
+app.get('*', (req, res) => {
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/html; charset=utf-8')
+    
+    res.end('<img style="width: 100%; height: 100%;" src="/error.jpg" alt="error 404" ><img>');
+    
+});
 
 
 
