@@ -1,40 +1,37 @@
-const express = require ('express');
+const express = require('express');
 const path = require('path');
 const Vehiculos = require('./claseVehiculos');
 
-const app = express ();
+const app = express();
 app.use(express.static('assets'));
 const port = 3000;
 app.use(express.json());
 
 const vehiculos = new Vehiculos();
 
-
-
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'home.html'));
 })
 
-app.get('/administrador', (req,res) => {
+app.get('/administrador', (req, res) => {
     res.sendFile(path.join(__dirname, 'administrador.html'));
 })
 
-app.get('/sobre-nosotros', (req,res) => {
+app.get('/sobre-nosotros', (req, res) => {
     res.sendFile(path.join(__dirname, 'sobre-nosotros.html'));
 })
 
 
-app.get('/claseVehiculo', (req,res) => {
-    res.sendFile(path.join(__dirname, 'claseVehiculo.js'));
-})
+app.get('/info-auto/:id', (req, res) => {
+    const id = req.params.id;
+    if (vehiculos.buscar(id)) {
+        res.sendFile(path.join(__dirname, 'info-auto.html'));
+    } else {
+        res.statusCode = 404;
+        res.setHeader('Content-Type', 'text/html; charset=utf-8')
+        res.end('<img style="width: 100%; height: 100%;" src="/error.jpg" alt="error 404" ><img>');
+    }
 
-app.get('/claseVehiculos', (req,res) => {
-    res.sendFile(path.join(__dirname, 'claseVehiculos.js'));
-})
-
-
-app.get('/info-auto/:id', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'info-auto.html'));
 });
 
 
@@ -53,30 +50,29 @@ app.get('/autos/:id', (req, res) => {
 
     if (autoBuscado) {
         res.json(vehiculos.buscar(id)); // productos.buscar(id) me retorna un objeto.
-        // res.json(productos.buscar(id)) enviar un json en la respuesta
     } else {
         res.status(404).json(`No se encontró el auto con id ${id}`);
     }
 });
 
 
-app.post('/autos', (req, res)=>{
+app.post('/autos', (req, res) => {
     const auto = req.body; //req.body : todo lo que esta en el formulario
     vehiculos.alta(auto); //agregar al array
 
-    res.json ({
-    mensaje: "auto guardado",
-    auto: auto,
-    // id: auto.id,
-    // año: auto.año,
-    // modelo: auto.modelo,
-    // marca: auto.marca,
-    // cantPuertas: auto.cantPuertas,
-    // precio: auto.precio,
-    // color: auto.color,
-    // tipo: auto.tipo,
-    // habilitado: auto.habilitado,
-    // kilometros: auto.kilometros,
+    res.json({
+        mensaje: "auto guardado",
+        auto: auto,
+        // id: auto.id,
+        // año: auto.año,
+        // modelo: auto.modelo,
+        // marca: auto.marca,
+        // cantPuertas: auto.cantPuertas,
+        // precio: auto.precio,
+        // color: auto.color,
+        // tipo: auto.tipo,
+        // habilitado: auto.habilitado,
+        // kilometros: auto.kilometros,
     })
 })
 
@@ -101,24 +97,17 @@ app.put('/autos/reservar/:id', (req, res) => {
     const body = req.body;
     const autoReservado = vehiculos.venta(id, body);
 
-    res.json({
+    res.jso1n({
         mensaje: `Auto ${id} reservado correctamente`,
         datos: autoReservado
     });
 });
 
 
-// app.get("", (req, res) => {
-//     res.sendFile(path.join(__dirname, '404.html'));
-
-// })
-
 app.get('*', (req, res) => {
     res.statusCode = 404;
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
-    
     res.end('<img style="width: 100%; height: 100%;" src="/error.jpg" alt="error 404" ><img>');
-    
 });
 
 

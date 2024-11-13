@@ -59,9 +59,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
     <div class="container">
         <div class="modal fade" id="dialogo1">
             <div class="modal-dialog">
@@ -73,7 +71,8 @@
                     </div>
                     <!-- cuerpo del diálogo -->
                     <div class="modal-body">
-                       <p>Recuerden que tienen 24 horas para concretar la venta. Proceder con la documentación y coordinación para la entrega.</p>
+                        <p>Recuerden que tienen 24 horas para concretar la venta. Proceder con la documentación y
+                            coordinación para la entrega.</p>
                     </div>
                     <!-- pie del diálogo -->
                     <div class="modal-footer">
@@ -83,7 +82,6 @@
             </div>
         </div>
     </div>
-
     <div class="position-fixed" style="right: 1%; bottom: 5%;">
         <button style="background-color: transparent; border: none;" onclick="wpp()">
             <a id="wpp" target="_blank" class="whatsapp">
@@ -94,47 +92,35 @@
     <div class="container mt-5">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <p class="col-md-3 mb-0 text-body-secondary">© 2024 SSLC. Todos los derechos reservados.</p>
-
             <a href="/"
                 class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <img class="bi me-2" width="200" height="auto" src="/logo.png" alt="logo" />
             </a>
-
             <ul class="nav col-md-5 justify-content-end">
                 <li class="nav-item nav-link px-2 text-body-secondary">Stella González</li>
                 <li class="nav-item nav-link px-2 text-body-secondary">Sofia Moreira</li>
                 <li class="nav-item nav-link px-2 text-body-secondary">Lucas Rodríguez</li>
                 <li class="nav-item nav-link px-2 text-body-secondary">Carolain Seija</li>
-
                 <li class="nav-item nav-link px-2 text-body-secondary">Carlos Romero</li>
                 <li class="nav-item nav-link px-2 text-body-secondary">Gabriel Barboza</li>
             </ul>
-
         </footer>
     </div>
     <script>
-     
-      
         const id = window.location.pathname.split('/').pop();
         const url = `http://localhost:3000/autos/${id}`;
-
-
         async function Reservar(id) {
-
             const respuesta = await fetch(`http://localhost:3000/autos/reservar/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    dato: "reservado"
+                    datos: "reservado"
                 })
             });
             obtenerAuto()
         }
-
-
-
 
         let info = ""
         async function obtenerAuto() {
@@ -142,7 +128,7 @@
             const auto = await res.json();
             info = `Estimado cliente, le enviamos la información: ${auto.marca}, ${auto.modelo}, año: ${auto.año}, precio: USD ${auto.precio}.`;
 
-            let imgAuto = document.getElementById("img-auto"); //contenedor donde va el auto
+            let imgAuto = document.getElementById("img-auto");
             const rutaImagen = id > 6 ? `/autos` : `/auto${id}`;
 
             imgAuto.innerHTML = `
@@ -178,13 +164,11 @@
                       </div>
             `
 
-
             let textDescripción = document.getElementById("text-descripción")
             textDescripción.innerText = `${auto.descripción}`
 
             let lista = document.getElementById('lista');
             lista.innerHTML = '';
-            // data-bs-toggle="modal" data-bs-target="#dialogo1" : ESTO ES LO QUE HACE QUE ABRA EL MODAL CON EL BOTON
             const elemento = `
                         <li style="list-style: none; margin-left: 10px;">
                             <h3>${auto.marca} ${auto.modelo}</h3>
@@ -205,9 +189,7 @@
 
                         <button data-bs-toggle="modal" data-bs-target="#dialogo1" onclick="Reservar(${auto.id})" style="width: 150px;" type="button" class="btn btn-dark rounded-5 text-light">RESERVAR</button>
                         </div>
-                        
                         `
-
                 ;
 
             let caracteristicas = document.getElementById('caracteristicas');
@@ -217,40 +199,22 @@
                     `
                 caracteristicas.innerHTML += elementoCaracteristicas;
             });
-
             lista.innerHTML += elemento;
         }
 
-
-
-
-
         function wpp() {
-            console.log("info", info)
             const numero = prompt("¿Cuál es tu número sin el cero?");
-            // const info = "El valor del auto es 2000"
-             const linkWpp = `https://wa.me/598${numero}?text=${info}`;
-            // const linkWpp = `https://api.whatsapp.com/send/?phone=598${numero}&text=${encodeURIComponent("Te paso la info")}&type=phone_number&app_absent=0`;
-
-             window.location.href = linkWpp;
+            const linkWpp = `https://wa.me/598${numero}?text=${info}`;
+            window.location.href = linkWpp;
         }
 
-      
         obtenerAuto()
 
-
-      
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-        crossorigin="anonymous"></script>
-
 </body>
 
 </html>
