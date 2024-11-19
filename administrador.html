@@ -47,39 +47,38 @@
             <div class="row">
                 <div class="col-md-4 mt-2">
                     <label for="año" class="form-label">Año:</label>
-                    <input type="number" class="form-control" id="año" placeholder="Año" value="2020">
+                    <input type="number" class="form-control" id="año" placeholder="Año" required>
                 </div>
                 <div class="col-md-4 mt-2">
                     <label for="modelo" class="form-label">Modelo:</label>
-                    <input type="text" class="form-control" id="modelo" name="modelo" placeholder="Modelo" value="208">
+                    <input type="text" class="form-control" id="modelo" name="modelo" placeholder="Modelo" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 mt-2">
                     <label for="marca" class="form-label">Marca:</label>
-                    <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca" value="peugeot">
+                    <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca" required>
                 </div>
                 <div class="col-md-4 mt-2">
                     <label for="cantPuertas" class="form-label">Cantidad de puertas:</label>
                     <input type="number" class="form-control" id="cantPuertas" name="cantPuertas"
-                        placeholder="Cantidad de puertas" value="4">
+                        placeholder="Cantidad de puertas" required pattern="[1-5]">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 mt-2">
                     <label for="precio" class="form-label">Precio:</label>
-                    <input type="number" class="form-control" id="precio" name="precio" placeholder="Precio"
-                        value="20.000">
+                    <input type="number" class="form-control" id="precio" name="precio" placeholder="Precio" required>
                 </div>
                 <div class="col-md-4 mt-2">
                     <label for="color" class="form-label">Color:</label>
-                    <input type="text" class="form-control" id="color" name="color" placeholder="Color" value="negro">
+                    <input type="text" class="form-control" id="color" name="color" placeholder="Color" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 mt-2">
                     <label for="tipo" class="form-label">Tipo de vehículo:</label>
-                    <select class="form-select" id="tipo" name="tipo">
+                    <select class="form-select" id="tipo" name="tipo" required>
                         <option value="Hatchback">Hatchback</option>
                         <option value="Sedán">Sedán</option>
                         <option value="SUV">SUV</option>
@@ -103,12 +102,11 @@
             <div class="row">
                 <div class="col-md-4 mt-2">
                     <label for="kilometros" class="form-label">kilometros:</label>
-                    <input type="text" class="form-control" id="kilometros" name="kilometros" placeholder="Kilometros"
-                        value="0">
+                    <input type="text" class="form-control" id="kilometros" name="kilometros" placeholder="Kilometros">
                 </div>
                 <div class="col-md-4 mt-2">
                     <label for="motor" class="form-label">Motor:</label>
-                    <input type="text" class="form-control" id="motor" placeholder="Motor" value="1.2">
+                    <input type="text" class="form-control" id="motor" placeholder="Motor">
                 </div>
             </div>
             <div class="row">
@@ -123,7 +121,7 @@
                     <div class="form-group">
                         <label for="descripción">Descripción</label>
                         <textarea class="form-control mt-2" id="descripción"
-                            rows="3">Este sedán combina estilo y rendimiento en un diseño moderno y elegante. Equipado con un motor eficiente, bajo kilometraje, y un interior cómodo y espacioso, este vehículo ofrece una experiencia de conducción suave. Ideal para quienes buscan confiabilidad sin sacrificar el confort.</textarea>
+                            rows="3"></textarea>
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -170,7 +168,6 @@
 
                     </div>
                     <div class="col-md-4 mt-2">
-
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="Transmisión-Manual">
                             <label class="form-check-label" for="Transmisión-Manual">
@@ -234,7 +231,6 @@
             </ul>
         </footer>
     </div>
-    <!-- modal para editar -->
     <div class="container">
         <div class="modal fade" id="dialogo1">
             <div class="modal-dialog">
@@ -358,11 +354,11 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="añoNuevo" class="form-label">Año:</label>
-                        <input class="form-control" id="añoNuevo" placeholder="Año" value="${auto.año}">
+                        <input class="form-control" id="añoNuevo" placeholder="Año" value="${auto.año}" required>
                     </div>
                     <div class="col-md-6">
                         <label for="modeloNuevo" class="form-label">Modelo:</label>
-                        <input type="text" class="form-control" id="modeloNuevo" name="modelo" placeholder="Modelo" value="${auto.modelo}">
+                        <input type="text" class="form-control" id="modeloNuevo" name="modelo" placeholder="Modelo" value="${auto.modelo}" required>
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -372,7 +368,8 @@
                     </div>
                 <div class="col-md-6">
                     <label for="cantPuertasNuevas" class="form-label">Cantidad de puertas:</label>
-                    <input type="number" class="form-control" id="cantPuertasNuevas" name="cantPuertas" placeholder="Cantidad de puertas" value="${auto.cantPuertas}">
+                    <input type="number" class="form-control" id="cantPuertasNuevas" name="cantPuertas" placeholder="Cantidad de puertas" value="${auto.cantPuertas}" pattern="[1-5]" 
+        title="Por favor, ingresa un número del 1 al 5." >
                 </div>
             </div>
         <div class="row mt-3">
